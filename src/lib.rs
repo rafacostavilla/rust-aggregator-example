@@ -47,3 +47,12 @@ impl Summary for Tweet {
 pub fn notify<T: Summary>(item: &T){
     println!("Breaking news! {}", item.summarize());
 }
+
+pub fn return_summarizable () -> impl Summary {
+    Tweet{
+        username: String::from("Summarizable"),
+        content: String::from("Summarizable tweet"),
+        reply: false,
+        retweet: false,
+    }
+}

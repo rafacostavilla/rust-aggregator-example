@@ -1,4 +1,4 @@
-use aggregator::{Summary, Tweet};
+use aggregator::{NewsArticle, Summary, Tweet};
 
 fn main() {
     let tweet = Tweet{
@@ -8,5 +8,15 @@ fn main() {
         retweet: false,
     };
 
+    let article = NewsArticle{
+        headline: String::from("Oscar winner complains about Academy"),
+        author: String::from("Rafael Costa Villa"),
+        location: String::from("AKL, New Zealand"),
+        content: String::from("However he won the Oscar, he couldn't agree with \
+        the award after all the recent controversy"),
+    };
+
     println!("1 new tweet: {}", tweet.summarize());
+    println!("--------------------------------------------------");
+    println!("New article available! {}", article.summarize());
 }
